@@ -68,28 +68,28 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                    GEMBOT SYSTEM TOPOLOGY                     │
+│                    GEMBOT SYSTEM TOPOLOGY                    │
 └──────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
-│              JETSON NANO 2GB (ROS 2 Humble)                  │
+│              JETSON NANO 2GB (ROS 2 Humble)                 │
 │  ┌──────────────────────────────────────────────────────┐   │
 │  │  Node: vision_node (MediaPipe/YOLO Object Detect)    │   │
-│  │  Node: ai_reasoning_node (Gemini API Integration)   │   │
-│  │  Node: motion_controller (Nav2 + DWB Local Planner) │   │
-│  │  Node: slam_node (RPLIDAR Processing & Map Build)   │   │
-│  │  Node: audio_node (I2S Speech Synth/Recognition)    │   │
+│  │  Node: ai_reasoning_node (Gemini API Integration)    │   │
+│  │  Node: motion_controller (Nav2 + DWB Local Planner)  │   │
+│  │  Node: slam_node (RPLIDAR Processing & Map Build)    │   │
+│  │  Node: audio_node (I2S Speech Synth/Recognition)     │   │
 │  └──────────────────────────────────────────────────────┘   │
-└──────────────┬──────────────────┬────────────────┬───────────┘
+└──────────────┬──────────────────┬────────────────┬──────────┘
                │                  │                │
         USB Port 1          USB Port 2         USB Port 3
         (RPLIDAR)          (WiFi 5 Adapter)   (Webcam)
                │                  │                │
     ┌──────────▼─────────────────▼────────────────▼──────────┐
     │           PERIPHERAL CONNECTIONS (USB)                 │
-    │  • RPLIDAR A1 (360° Scanner @ 25KHz)                  │
-    │  • Logitech C270 HD Webcam (1280x720@30fps)           │
-    │  • ASUS WiFi 5 USB Adapter                            │
+    │  • RPLIDAR A1 (360° Scanner @ 25KHz)                   │
+    │  • Logitech C270 HD Webcam (1280x720@30fps)            │
+    │  • ASUS WiFi 5 USB Adapter                             │
     └──────────────────────┬─────────────────────────────────┘
                            │
             ┌──────────────┴───────────────┐
@@ -112,7 +112,7 @@
     │  LRCLK (L/R Clock) → Pin 35                             │
     │  BCLK  (Bit Clock) → Pin 12                             │
     │  DIN   (Data In)   → Pin 40                             │
-    │                                                          │
+    │                                                         │
     │  Connected to: MAX98357 I2S DAC + 3W Speaker            │
     │  Purpose: Audio Output for Voice Synthesis              │
     └─────────────────────────────────────────────────────────┘
@@ -121,20 +121,20 @@
     │          MOTOR CONTROL & POWER DISTRIBUTION              │
     │  ┌───────────────────────────────────────────────────┐   │
     │  │  HIGH POWER CIRCUIT:                              │   │
-    │  │  • 12V Direct → L298N Motor Driver (with Fuse)   │   │
-    │  │  • 4x DC Gearbox Motors (Yellow Motor)           │   │
+    │  │  • 12V Direct → L298N Motor Driver (with Fuse)    │   │
+    │  │  • 4x DC Gearbox Motors (Yellow Motor)            │   │
     │  └───────────────────────────────────────────────────┘   │
     │  ┌───────────────────────────────────────────────────┐   │
     │  │  STABLE POWER CIRCUIT (COMMON GROUND):            │   │
-    │  │  • 5V 5A from LY-KREE Buck Converter             │   │
-    │  │  • Supplies: Jetson Nano, Sensors, L298N Logic  │   │
-    │  │  • Single Reference Ground (GND)                │   │
+    │  │  • 5V 5A from LY-KREE Buck Converter              │   │
+    │  │  • Supplies: Jetson Nano, Sensors, L298N Logic    │   │
+    │  │  • Single Reference Ground (GND)                  │   │
     │  └───────────────────────────────────────────────────┘   │
     │  ┌───────────────────────────────────────────────────┐   │
     │  │  POWER SOURCE:                                    │   │
-    │  │  • Li-ion 18650 3S Pack (11.1V, 8000mAh)         │   │
-    │  │  • Protection Circuit (Overcharge/LVC)          │   │
-    │  │  • MiFi Power: Separate power bank or USB        │   │
+    │  │  • Li-ion 18650 3S Pack (11.1V, 8000mAh)          │   │
+    │  │  • Protection Circuit (Overcharge/LVC)            │   │
+    │  │  • MiFi Power: Separate power bank or USB         │   │
     │  └───────────────────────────────────────────────────┘   │
     └──────────────────────────────────────────────────────────┘
 ```
